@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Myapplication
-{
+
+    { 
     public partial class Demo1 : System.Web.UI.Page
     {
+
+        SqlConnection cnn;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string connetionString;
-            SqlConnection cnn;
 
             connetionString = @"Server=DESKTOP-C17F9AU;Trusted_Connection=True;Database=new-db ;User ID=user;Password=motdepasse";
 
@@ -21,17 +20,26 @@ namespace Myapplication
 
             cnn.Open();
 
-            Response.Write("connect");
-            
+            Response.Write("Connection Réussie");
+            //cnn.Close();
 
 
 
+            cnn.Close();
 
+        }
+
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //Session["Name"] = txtName.Text;
+
+            cnn.Open();
 
             SqlCommand command;
             SqlDataReader dataReader;
             String sql, Output = " ";
-            sql = "Select nom,prenom from essai";
+            sql = "Select nom,prenom from essai order by len([Nom]), [Prenom]";
 
             command = new SqlCommand(sql, cnn);
 
@@ -44,31 +52,81 @@ namespace Myapplication
             Response.Write(Output);
             dataReader.Close();
             command.Dispose();
+
             cnn.Close();
 
         }
-    
-        
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-
+        protected void Button1_Click(object sender, EventArgs e)
         {
-           //ession["Name"] = txtName.Text;
+            cnn.Open();
 
-            Response.Write(Session["Name"]);
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "Insert into Essai1(Nom,Prenom) values (" + ")";
 
-            Response.Write(txtName.Text + "</br>");
-            Response.Write(lstLocation.SelectedItem.Text + "</br>");
+            command = new SqlCommand(sql, cnn);
 
-            lblName.Visible = false;
-            txtName.Visible = false;
-            lstLocation.Visible = false;
-            chkC.Visible = false;
-            chkASP.Visible = false;
-            btnSubmit.Visible = false;
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+
+            command.Dispose();
+
+            cnn.Close();
+
+
+            btnSubmit_Click(sender, e);
+
         }
 
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            cnn.Open();
+
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "Update Essai1 set Nom = '" + "Steven" + "' where Prenom = 1";
+
+            command = new SqlCommand(sql, cnn);
+
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+
+            command.Dispose();
+
+            cnn.Close();
+
+
+            btnSubmit_Click(sender, e);
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            cnn.Open();
+
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "Delete Essai1 where Nom= '" +  "'";
+
+            command = new SqlCommand(sql, cnn);
+
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+
+            command.Dispose();
+
+            cnn.Close();
+
+
+            btnSubmit_Click(sender, e);
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            //SqlDataSource1.Update();
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

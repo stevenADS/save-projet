@@ -42,40 +42,49 @@ namespace Myapplication
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// Contrôle lstLocation.
+        /// Contrôle Button1.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lstLocation;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Contrôle chkASP.
+        /// Contrôle Button2.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkASP;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// Contrôle chkC.
+        /// Contrôle Button3.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton chkC;
+        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// Contrôle ListBox1.
+        /// Contrôle Button4.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.Button Button4;
+
+        /// <summary>
+        /// Contrôle GridView1.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
         /// Contrôle SqlDataSource1.
@@ -87,13 +96,13 @@ namespace Myapplication
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// Contrôle ListBox2.
+        /// Contrôle GridView2.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox2;
+        protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
         /// Contrôle SqlDataSource2.
